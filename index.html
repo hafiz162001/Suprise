@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#ffe4e6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Kejutan ulang tahun spesial" />
+    <title>Selamat Ulang Tahun! 🎂</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Quicksand:wght@500;600;700&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Ambient Canvas for floating hearts & sparkles -->
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- Phone Bezel / Mobile Container -->
+    <div class="device-wrapper">
+      <!-- Status Notch Simulation -->
+      <div class="mobile-notch-bar">
+        <span>09:41</span>
+        <div class="notch-pill"></div>
+        <span>✨ 100%</span>
+      </div>
+
+      <!-- Music Disc Floating Control -->
+      <button class="music-toggle-btn" id="musicToggle" aria-label="Nyalakan/Matikan Musik" title="Musik On/Off">
+        <span class="disc-icon">🎵</span>
+      </button>
+
+      <!-- Main Interactive Screen -->
+      <main class="app-screen">
+        <!-- ================= STAGE 1: WELCOME SCREEN ================= -->
+        <section class="stage active" id="stageWelcome">
+          <div class="sparkle-badge">
+            <span>🎉</span>
+            <span>HARI SPESIAL BUAT KAMU</span>
+            <span>🎉</span>
+          </div>
+
+          <div class="gift-box-container" id="giftBoxTrigger" title="Ketuk untuk Membuka">
+            <div class="gift-box">🎁</div>
+          </div>
+
+          <h1 class="title-main" id="welcomeTitle">Happy Birthday! 🎉</h1>
+          <p class="subtitle-main" id="welcomeSubtitle">
+            Akhirnya hari yang ditunggu tiba juga! Ada sesuatu nih buat kamu, coba dibuka dulu ya.
+          </p>
+
+          <button class="cta-button" id="btnOpenGift">
+            <span id="btnOpenGiftText">Buka Kadonya 🎁</span>
+          </button>
+
+          <!-- Floating cute stickers -->
+          <div class="floating-stickers">
+            <span class="sticker st-1">🎂</span>
+            <span class="sticker st-2">🎉</span>
+            <span class="sticker st-3">🎈</span>
+            <span class="sticker st-4">✨</span>
+          </div>
+        </section>
+
+        <!-- ================= STAGE 2: INTERACTIVE CAKE ================= -->
+        <section class="stage" id="stageCake">
+          <div class="sparkle-badge">
+            <span>🎂</span>
+            <span>SAATNYA TIUP LILIN</span>
+            <span>🎂</span>
+          </div>
+
+          <h2 class="title-main" id="cakeTitle">Make A Wish Dulu! 🎂</h2>
+          <p class="subtitle-main" id="cakeInstruction">
+            Pikirin satu atau doa terbaik kamu untuk tahun ini, kalau udah mantap langsung tiup lilinnya!
+          </p>
+
+          <!-- Interactive Cake Component Mount Point -->
+          <div id="cakeMount"></div>
+        </section>
+
+        <!-- ================= STAGE 3: CELEBRATION & LOVE LETTER ================= -->
+        <section class="stage" id="stageCelebration">
+          <div class="celebration-header">
+            <span class="badge-grand">🎉🥳🎂</span>
+            <h2 class="title-main" id="celebrationTitle">🎉 HAPPY BIRTHDAY! 🎉</h2>
+            <p class="subtitle-main" id="celebrationSubtitle">
+              Resmi bertambah umur hari ini! Semoga selalu sehat, bahagia, dan makin sukses!
+            </p>
+          </div>
+
+          <!-- Polaroid Photo Card -->
+          <div class="polaroid-wrapper" id="polaroidCard">
+            <img class="polaroid-img" id="polaroidImg" src="" alt="Foto" />
+            <div class="polaroid-caption" id="polaroidCaption">Foto kenangan kita 📸</div>
+          </div>
+
+          <!-- Love Letter Paper Card -->
+          <div class="letter-card">
+            <h3 class="letter-title" id="letterTitle">Catatan Spesial Buat Kamu 📝</h3>
+            <div class="letter-body" id="letterBody"></div>
+            <div class="letter-signature">
+              <span id="letterSignOff">Doa terbaik selalu buat kamu,</span><br />
+              <strong id="senderName">Dari Aku 😎</strong>
+            </div>
+          </div>
+
+          <!-- Replay Button -->
+          <button class="replay-button" id="btnReplay">
+            <span>🎂</span>
+            <span>Nyalakan Lilin Lagi</span>
+          </button>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        Wishing you the happiest birthday! 🎉
+      </footer>
+    </div>
+
+    <!-- Main Application Script -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
